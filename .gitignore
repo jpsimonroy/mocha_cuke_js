@@ -1,0 +1,5 @@
+node_modules
+build
+stub.log
+src/views/*.js
+src/views/.module-cache

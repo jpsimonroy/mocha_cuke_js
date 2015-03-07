@@ -1,0 +1,7 @@
+source 'http://rubygems.org'
+gem 'rake'
+gem 'mustache'
+gem 'uglifier'
+gem 'activesupport'
+gem 'yui-compressor'
+gem 'foreman'

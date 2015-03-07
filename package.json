@@ -1,0 +1,40 @@
+{
+    "name": "cuke_my_mocha",
+    "version": "0.0.1",
+    "description": "",
+    "main": "gulpfile.js",
+    "dependencies": {
+        "jquery": "*",
+        "moment": "*",
+        "react": "0.12",
+        "spin.js": "^2.0.1",
+        "underscore": "*"
+    },
+    "devDependencies": {
+        "browserify": "*",
+        "gulp": "*",
+        "gulp-browserify": "*",
+        "gulp-debug": "^0.3.0",
+        "gulp-gzip": "*",
+        "gulp-minify-css": "*",
+        "gulp-plumber": "*",
+        "gulp-react": "^3.0.0",
+        "gulp-rename": "*",
+        "gulp-reactify": "^1.1.0",
+        "gulp-sass": "*",
+        "react-tools": "*",
+        "gulp-reactify": "*",
+        "gulp-sourcemaps": "^1.5.0",
+        "gulp-template": "*",
+        "gulp-uglify": "*",
+        "gulp-util": "*",
+        "gulp-minify-css": "*",
+        "browserify": "*",
+        "jsdom" : "*",
+        "xmlhttprequest": "*",
+        "react-tools":"*",
+        "mocha": "*"
+    },
+    "author": "Simon Roy",
+    "license": "MIT"
+}
