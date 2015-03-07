@@ -38,6 +38,14 @@ Running mocha tests:
 ```sh
 $ sh stub.sh restart && mocha
 ```
+
+Running cucumber tests:
+```sh
+$ rake local_server
+```
+```sh
+$ rake cukes
+```
 License
 ----
 
