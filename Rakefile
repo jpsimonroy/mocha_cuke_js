@@ -46,7 +46,19 @@ def compiled_js
   Uglifier.compile js
 end
 
-task :local_server do
+task :gulp do
+  system 'gulp compile'
+end
+
+task :cukes do
+  system './node_modules/.bin/cucumber.js -f pretty -t ~@ignore'
+end
+
+task :stubs do
+  system 'sh stub.sh restart'
+end
+
+task :local_server => [:gulp, :stubs] do
   server = TCPServer.new('localhost', 2345)
   loop do
     socket = server.accept

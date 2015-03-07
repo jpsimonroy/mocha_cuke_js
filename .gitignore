@@ -1,5 +1,7 @@
 node_modules
 build
+screenshots
+npm-debug.log
 stub.log
 src/views/*.js
 src/views/.module-cache
