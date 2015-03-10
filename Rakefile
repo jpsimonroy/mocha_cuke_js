@@ -54,6 +54,12 @@ task :cukes do
   system './node_modules/.bin/cucumber.js -f pretty -t ~@ignore'
 end
 
+task :spec  do
+  system 'mocha'
+end
+
+task :all_spec  => [:spec, :cukes] {}
+
 task :stubs do
   system 'sh stub.sh restart'
 end
@@ -67,9 +73,9 @@ task :local_server => [:gulp, :stubs] do
     response = render css, js, "http://localhost:5554"
 
     socket.print "HTTP/1.1 200 OK\r\n" +
-                 "Content-Type: text/html\r\n" +
-                 "Content-Length: #{response.bytesize}\r\n" +
-                 "Connection: close\r\n"
+      "Content-Type: text/html\r\n" +
+      "Content-Length: #{response.bytesize}\r\n" +
+      "Connection: close\r\n"
     socket.print "\r\n"
     socket.print response
     socket.close
