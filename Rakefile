@@ -64,6 +64,10 @@ task :stubs do
   system 'sh stub.sh restart'
 end
 
+task :coverage do
+  system './node_modules/.bin/istanbul cover _mocha -- -R spec'
+end
+
 task :local_server => [:gulp, :stubs] do
   server = TCPServer.new('localhost', 2345)
   loop do

@@ -1,6 +1,7 @@
 node_modules
 build
 screenshots
+coverage
 npm-debug.log
 stub.log
 src/views/*.js
