@@ -50,12 +50,16 @@ task :gulp do
   system 'gulp compile'
 end
 
+task :clean_coverage do
+  system 'rm -rf coverage'
+end
+
 task :cukes do
-  system './node_modules/.bin/cucumber.js -f pretty -t ~@ignore'
+  system './node_modules/.bin/istanbul cover --report none --print none --include-pid ./node_modules/.bin/cucumber.js -- -f pretty -t ~@ignore'
 end
 
 task :spec  do
-  system 'mocha'
+  system './node_modules/.bin/istanbul cover --report none --print none --include-pid _mocha -- -R spec'
 end
 
 task :all_spec  => [:spec, :cukes] {}
@@ -64,8 +68,8 @@ task :stubs do
   system 'sh stub.sh restart'
 end
 
-task :coverage do
-  system './node_modules/.bin/istanbul cover _mocha -- -R spec'
+task :spec_with_coverage  => [:clean_coverage, :all_spec] do
+  system 'ls coverage/coverage* | xargs node coverage_reporter.js'  
 end
 
 task :local_server => [:gulp, :stubs] do
